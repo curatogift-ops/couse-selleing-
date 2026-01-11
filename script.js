@@ -242,11 +242,45 @@ function setupMobileMenu() {
     
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', () => {
-            navLinks?.classList.toggle('active');
-            navActions?.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
+             // Toggle active classes
+             navLinks.classList.toggle('active');
+             mobileMenuToggle.classList.toggle('active');
+             
+             // Toggle scrolling
+             if (navLinks.classList.contains('active')) {
+                 document.body.style.overflow = 'hidden';
+             } else {
+                 document.body.style.overflow = '';
+             }
         });
     }
+
+    // Close menu when clicking a link
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navLinks?.classList.remove('active');
+                navActions?.classList.remove('active');
+                mobileMenuToggle?.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && 
+            navLinks?.classList.contains('active') && 
+            !navLinks.contains(e.target) && 
+            !mobileMenuToggle.contains(e.target)) {
+            
+            navLinks.classList.remove('active');
+            navActions?.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 // Smooth scrolling for navigation links
@@ -282,14 +316,12 @@ function setupAnimations() {
     }, observerOptions);
     
     // Observe all fade-in elements
-    setTimeout(() => {
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-    }, 100);
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
 }
 
 // Search functionality
@@ -358,19 +390,7 @@ function setupNavScroll() {
 }
 
 // Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    renderContent();
-    setupMobileMenu();
-    setupSmoothScrolling();
-    setupSearch();
-    setupNewsletter();
-    setupNavScroll();
-    
-    // Setup animations after content is rendered
-    setTimeout(() => {
-        setupAnimations();
-    }, 100);
-});
+
 
 // Add some parallax effect to hero section
 window.addEventListener('scroll', () => {
@@ -451,8 +471,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupNavScroll();
     
     // Setup animations and carousel after content is rendered
-    setTimeout(() => {
-        setupAnimations();
-        setupCarousel();
-    }, 100);
+    setupAnimations();
+    setupCarousel();
 });
