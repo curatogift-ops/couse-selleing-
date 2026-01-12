@@ -1,0 +1,126 @@
+
+/* ===== About Section ===== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-12);
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--spacing-4);
+    color: var(--primary-700);
+}
+
+.about-text p {
+    color: var(--gray-600);
+    margin-bottom: var(--spacing-6);
+    font-size: var(--text-lg);
+}
+
+.about-features {
+    list-style: none;
+}
+
+.about-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-3);
+    font-size: var(--text-base);
+    color: var(--gray-800);
+    font-weight: var(--font-medium);
+}
+
+.about-features i {
+    color: var(--success);
+    font-size: var(--text-xl);
+}
+
+.about-img_rounded {
+    width: 100%;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    transition: transform var(--transition-base);
+}
+
+.about-img_rounded:hover {
+    transform: scale(1.02);
+}
+
+/* ===== Contact Section ===== */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-12);
+    background: var(--white);
+    padding: var(--spacing-8);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-4);
+}
+
+.contact-item i {
+    font-size: var(--text-xl);
+    color: var(--primary-600);
+    background: var(--primary-50);
+    padding: var(--spacing-3);
+    border-radius: var(--radius-full);
+}
+
+.contact-item h4 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-1);
+}
+
+.contact-item p {
+    color: var(--gray-600);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    outline: none;
+    transition: all var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-grid,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-8);
+    }
+    
+    .contact-wrapper {
+        padding: var(--spacing-6);
+    }
+}
