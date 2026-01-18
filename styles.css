@@ -1200,11 +1200,15 @@ a {
         align-items: center;
     }
     
-    /* Smaller buttons on mobile */
+    /* Balanced button size on mobile */
     .btn-primary,
     .btn-secondary {
-        padding: var(--spacing-1) var(--spacing-4);
+        padding: var(--spacing-2) var(--spacing-5);
         font-size: var(--text-sm);
+    }
+    
+    .hero-image {
+        margin-bottom: var(--spacing-8);
     }
         justify-content: flex-start;
     }
