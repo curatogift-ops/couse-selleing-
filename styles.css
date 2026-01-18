@@ -1198,6 +1198,14 @@ a {
         animation: slideDown 0.3s ease-out forwards;
         height: 100vh; /* Full screen height for better mobile experience */
         align-items: center;
+    }
+    
+    /* Smaller buttons on mobile */
+    .btn-primary,
+    .btn-secondary {
+        padding: var(--spacing-1) var(--spacing-4);
+        font-size: var(--text-sm);
+    }
         justify-content: flex-start;
     }
 
