@@ -170,7 +170,7 @@ a {
 }
 
 .logo-img {
-    height: 40px;
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -1838,3 +1838,96 @@ a {
     font-weight: var(--font-extrabold);
 }
 
+/* ===== Floating Contact Widgets ===== */
+.floating-contact-widgets {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.contact-widget {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.contact-widget:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    animation: none;
+}
+
+.contact-widget i {
+    font-size: 28px;
+    color: white;
+}
+
+.whatsapp-widget {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.call-widget {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* Tooltip */
+.contact-widget .tooltip {
+    position: absolute;
+    right: 75px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-base);
+}
+
+.contact-widget:hover .tooltip {
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    50% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .floating-contact-widgets {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .contact-widget {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .contact-widget i {
+        font-size: 24px;
+    }
+    
+    .contact-widget .tooltip {
+        display: none;
+    }
+}
