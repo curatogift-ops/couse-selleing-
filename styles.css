@@ -227,7 +227,7 @@ a {
     border: 2px solid var(--primary-100);
     font-weight: var(--font-semibold);
     font-size: var(--text-base);
-    padding: var(--spacing-3) var(--spacing-6);
+    padding: var(--spacing-2) var(--spacing-6);
     cursor: pointer;
     border-radius: var(--radius-lg);
     transition: all var(--transition-base);
@@ -264,7 +264,7 @@ a {
     border: none;
     font-weight: var(--font-semibold);
     font-size: var(--text-base);
-    padding: var(--spacing-3) var(--spacing-6);
+    padding: var(--spacing-2) var(--spacing-6);
     cursor: pointer;
     border-radius: var(--radius-lg);
     box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
