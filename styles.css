@@ -1,48 +1,53 @@
 /* ===== CSS Variables & Design Tokens ===== */
 :root {
-    /* Primary Colors - Deep Purple/Violet */
-    --primary-50: #faf5ff;
-    --primary-100: #f3e8ff;
-    --primary-200: #e9d5ff;
-    --primary-300: #d8b4fe;
-    --primary-400: #c084fc;
-    --primary-500: #a855f7;
-    --primary-600: #9333ea;
-    --primary-700: #7e22ce;
-    --primary-800: #6b21a8;
-    --primary-900: #581c87;
+    /* Modern Tech Palette */
+    /* Blue - Primary */
+    --primary-50: #eff6ff;
+    --primary-100: #dbeafe;
+    --primary-200: #bfdbfe;
+    --primary-300: #93c5fd;
+    --primary-400: #60a5fa;
+    --primary-500: #3b82f6; /* Main Blue */
+    --primary-600: #2563eb;
+    --primary-700: #1d4ed8;
+    --primary-800: #1e40af;
+    --primary-900: #1e3a8a;
     
-    /* Accent Colors - Vibrant Blue/Cyan */
-    --accent-50: #eff6ff;
-    --accent-100: #dbeafe;
-    --accent-200: #bfdbfe;
-    --accent-300: #93c5fd;
-    --accent-400: #60a5fa;
-    --accent-500: #3b82f6;
-    --accent-600: #2563eb;
-    --accent-700: #1d4ed8;
-    --accent-800: #1e40af;
-    --accent-900: #1e3a8a;
+    /* Purple - Accent */
+    --accent-50: #f5f3ff;
+    --accent-100: #ede9fe;
+    --accent-200: #ddd6fe;
+    --accent-300: #c4b5fd;
+    --accent-400: #a78bfa;
+    --accent-500: #8b5cf6; /* Main Purple */
+    --accent-600: #7c3aed;
+    --accent-700: #6d28d9;
+    --accent-800: #5b21b6;
+    --accent-900: #4c1d95;
     
-    /* Neutral Colors */
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
+    /* Neutrals */
+    --gray-50: #f8fafc; /* Very light cool gray */
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0; /* Light Gray from palette */
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155; /* Dark Gray from palette */
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
     
-    /* Semantic Colors */
+    /* Semantic Colors & Teal */
     --white: #ffffff;
     --black: #000000;
-    --success: #10b981;
+    --teal-400: #2dd4bf;
+    --teal-500: #14b8a6; /* Teal from palette */
+    --teal-600: #0d9488;
+    
+    --success: var(--teal-500); /* Use Teal for success/highlights */
     --warning: #f59e0b;
     --error: #ef4444;
-    --info: #3b82f6;
+    --info: var(--primary-500);
     
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -118,7 +123,7 @@ body {
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--gray-800);
-    background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 25%, #eff6ff 50%, #e0e7ff 75%, #f5f3ff 100%);
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-50) 25%, var(--accent-50) 50%, var(--primary-100) 75%, var(--gray-50) 100%);
     background-attachment: fixed;
     overflow-x: hidden;
 }
@@ -426,7 +431,7 @@ a {
 }
 
 .btn-search {
-    background: #10b981;
+    background: var(--success);
     color: var(--white);
     border: none;
     font-weight: var(--font-semibold);
