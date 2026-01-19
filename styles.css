@@ -1357,9 +1357,18 @@ a {
     }
     
     .instructors-grid,
-    .testimonials-slider {
+    .testimonials-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-6);
+    }
+    
+    .testimonial-card {
+        padding: var(--spacing-6);
+    }
+
+    .author-avatar {
+        flex-shrink: 0;
+        line-height: 1;
     }
     
     /* Footer */
