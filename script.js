@@ -461,6 +461,67 @@ function setupCarousel() {
     updateButtonStates();
 }
 
+// Contact Form Handling
+function setupContactForm() {
+    const form = document.querySelector('.contact-form');
+    const modal = document.getElementById('thankYouModal');
+    const closeBtn = document.querySelector('.btn-modal-close');
+    const submitBtn = form?.querySelector('button[type="submit"]');
+    
+    if (!form || !modal) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Disable button and show loading state
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show modal
+                modal.classList.add('active');
+                form.reset();
+            } else {
+                alert("Oops! There was a problem submitting your form");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("Oops! There was a problem submitting your form");
+        })
+        .finally(() => {
+            // Reset button
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+        });
+    });
+
+    // Close modal
+    const closeModal = () => {
+        modal.classList.remove('active');
+    };
+
+    closeBtn?.addEventListener('click', closeModal);
+    
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     renderContent();
@@ -469,6 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSearch();
     setupNewsletter();
     setupNavScroll();
+    setupContactForm(); // Initialize contact form
     
     // Setup animations and carousel after content is rendered
     setupAnimations();
