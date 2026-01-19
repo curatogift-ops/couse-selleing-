@@ -455,7 +455,6 @@ a {
 
 .illustration-wrapper {
     position: relative;
-    animation: bounce 3s ease-in-out infinite;
 }
 
 @keyframes bounce {
