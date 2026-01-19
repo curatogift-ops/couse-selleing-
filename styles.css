@@ -1902,13 +1902,14 @@ a {
 
 .testimonial-quote::before {
     content: '"';
-    font-size: 4rem;
+    font-size: 5rem;
     color: var(--primary-100);
     position: absolute;
-    top: -2rem;
-    left: -1rem;
+    top: -2.5rem;
+    left: -1.5rem;
     font-family: serif;
     z-index: -1;
+    opacity: 0.5;
 }
 
 .testimonial-author {
