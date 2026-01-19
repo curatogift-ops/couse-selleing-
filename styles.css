@@ -471,7 +471,7 @@ a {
 
 .hero-logo {
     width: 100%;
-    max-width: 400px; /* Restrict max width for the logo */
+    max-width: 300px; /* Restrict max width for the logo */
     height: auto;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
     display: block;
