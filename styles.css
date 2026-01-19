@@ -1378,6 +1378,12 @@ a {
         flex-shrink: 0;
         line-height: 1;
     }
+
+    .testimonial-quote::before {
+        font-size: 3rem;
+        top: -1.5rem;
+        left: -0.5rem;
+    }
     
     /* Footer */
     .footer-content {
