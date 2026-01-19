@@ -437,7 +437,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p>support@globalacad.com</p>
+                            <p>Globalacad.com@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -462,15 +462,19 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form action="https://formsubmit.co/Globalacad.com@gmail.com" method="POST" class="contact-form">
+                    <!-- Optional: Redirect to a thank you page (or same page) -->
+                    <input type="hidden" name="_next" value="https://globalacad.com">
+                    <input type="hidden" name="_captcha" value="false">
+
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn-primary">Send Message</button>
                 </form>
