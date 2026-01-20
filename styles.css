@@ -470,7 +470,7 @@ a {
 
 .hero-logo {
     width: 100%;
-    max-width: 300px; /* Restrict max width for the logo */
+    max-width: 210px; /* Reduced by 30% from 300px */
     height: auto;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
     display: block;
@@ -903,16 +903,7 @@ a {
     position: relative;
 }
 
-.testimonial-card::before {
-    content: '"';
-    position: absolute;
-    top: var(--spacing-6);
-    left: var(--spacing-6);
-    font-size: 4rem;
-    color: var(--primary-200);
-    font-family: Georgia, serif;
-    line-height: 1;
-}
+/* Removed old ::before quote - now using .testimonial-quote::before instead */
 
 .testimonial-card:hover {
     box-shadow: var(--shadow-xl);
