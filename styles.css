@@ -1567,6 +1567,28 @@ a {
     .contact-wrapper {
         padding: var(--spacing-6);
     }
+    
+    /* Testimonial responsive adjustments */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-6);
+    }
+    
+    .testimonial-card {
+        padding: var(--spacing-6);
+    }
+    
+    .testimonial-quote {
+        font-size: var(--text-sm);
+        padding-left: var(--spacing-4);
+        padding-top: var(--spacing-3);
+    }
+    
+    .testimonial-quote::before {
+        font-size: 3rem;
+        top: -5px;
+        left: -5px;
+    }
 }
 
 /* ===== Features Section (Why Choose Us) ===== */
@@ -1900,21 +1922,24 @@ a {
     color: var(--gray-700);
     font-style: italic;
     margin-bottom: var(--spacing-6);
-    line-height: 1.6;
+    line-height: 1.7;
     flex: 1;
     position: relative;
+    padding-left: var(--spacing-6);
+    padding-top: var(--spacing-4);
 }
 
 .testimonial-quote::before {
     content: '"';
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--primary-100);
     position: absolute;
-    top: -2.5rem;
-    left: -1.5rem;
-    font-family: serif;
-    z-index: -1;
-    opacity: 0.5;
+    top: 0;
+    left: 0;
+    font-family: Georgia, serif;
+    z-index: 0;
+    opacity: 0.4;
+    line-height: 1;
 }
 
 .testimonial-author {
